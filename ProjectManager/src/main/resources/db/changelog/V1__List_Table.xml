@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="5" author="pavankalyan">
+        <createTable tableName="List">
+            <column name="id" type="int" autoIncrement="true" startWith="20001" incrementBy="10">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(50)">
+            <constraints nullable="false"/>
+            </column>
+            <column name="board_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="createdUser" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="List"
+                                 baseColumnNames="board_id"
+                                 constraintName="fk_list_board"
+                                 referencedTableName="Board"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="List" baseColumnNames="createdUser" constraintName="fk_list_user" referencedTableName="User"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

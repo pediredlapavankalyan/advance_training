@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <!-- Include each individual changelog file -->
+    <include file="classpath:db/changelog/V1__User_Table.xml"/>
+    <include file="classpath:db/changelog/V1__Workspace_Table.xml"/>
+    <include file="classpath:db/changelog/V1__Workspace_Members_Table.xml"/>
+    <include file="classpath:db/changelog/V1__Board_Table.xml"/>
+    <include file="classpath:db/changelog/V1__List_Table.xml"/>
+    <include file="classpath:db/changelog/V1__Card_Table.xml"/>
+    <!--  Include other files here -->
+
+</databaseChangeLog>

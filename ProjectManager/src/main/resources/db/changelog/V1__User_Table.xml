@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
-
+<!--creating table -->
     <changeSet id="1" author="pavankalyan">
         <createTable tableName="User">
             <column name="id" type="int"  autoIncrement="true" startWith="1001" incrementBy="1">
@@ -21,7 +21,31 @@
             <column name="second_name" type="varchar(50)"/>
         </createTable>
     </changeSet>
+<!-- Adding new column into existing table   -->
     <changeSet id="1.1" author="pavankalyan">
-        <
+        <addColumn tableName="User">
+            <column name="role" type="varchar(15)" defaultValue="user" />
+        </addColumn>
+
+    </changeSet>
+
+    <changeSet id="1.2" author="pavankalyan">
+        <!--Modifing column datatype-->
+        <modifyDataType tableName="User" columnName="role" newDataType="varchar(20)"/>
+        <!--Drop column
+        <dropColumn tableName="User" columnName="role"/>-->
+    </changeSet>
+    <!--to change column name-->
+    <changeSet id="1.3" author="pk">
+        <renameColumn tableName="User" oldColumnName="role" newColumnName="Role"/>
+    </changeSet>
+    <!--Adding values to table-->
+    <changeSet id="1.4" author="pk">
+        <insert tableName="User">
+            <column name="email" value="pavanavya98@gmail.com"/>
+            <column name="password" value="Pavan@2408"/>
+            <column name="first_name" value="pavan"/>
+            <column name="second_name" value="kalyan" />
+        </insert>
     </changeSet>
 </databaseChangeLog>

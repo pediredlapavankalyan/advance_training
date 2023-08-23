@@ -7,10 +7,10 @@
     <changeSet id="3" author="pavankalyan">
         <createTable tableName="workspace_members">
             <column name="user_id" type="int" >
-                <constraints  nullable="false"/>
+                <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="workspace_id" type="int">
-                <constraints nullable="false"/>
+                <constraints primaryKey="true" nullable="false"/>
             </column>
           <!--  <primaryKey columnNames="user_id, workspace_id"/> -->
         </createTable>

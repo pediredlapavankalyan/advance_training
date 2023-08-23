@@ -22,5 +22,19 @@
                                  referencedTableName="User"
                                  referencedColumnNames="id"/>
     </changeSet>
+    <!--inserting data -->
+    <changeSet id="2.1" author="pk">
+        <insert tableName="Workspace">
+            <column name="name" value="project1" ></column>
+            <column name="created_user_id" value="1001"/>
+        </insert>
+    </changeSet>
+    <!--updating a row-->
+    <changeSet id="2.2" author="pk">
+        <update tableName="Workspace">
+            <column name="name" value="projectk"/>
+            <where> id=10001</where>
+        </update>
+    </changeSet>
 
 </databaseChangeLog>

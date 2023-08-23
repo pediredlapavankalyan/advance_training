@@ -4,6 +4,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
+
     <changeSet id="4" author="pavankalyan">
         <createTable tableName="Board">
             <column name="id" type="int" autoIncrement="true" startWith="1001" incrementBy="1">

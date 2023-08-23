@@ -29,9 +29,9 @@ public class User {
 
     @OneToMany(mappedBy = "listCreator")
     private  Set<List> lists = new LinkedHashSet<>();
-    @OneToMany(mappedBy = "activeUser")
-    private Set<Workspace> activeWorkspaces = new LinkedHashSet<>();
 
+    @ManyToMany(mappedBy = "WorkMembers")
+    private Set<Workspace> activeWorkspaces = new LinkedHashSet<>();
     @OneToMany(mappedBy = "cardCreator")
     private Set<Card> cards = new LinkedHashSet<>();
 

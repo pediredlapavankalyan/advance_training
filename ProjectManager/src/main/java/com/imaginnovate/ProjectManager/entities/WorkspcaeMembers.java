@@ -11,14 +11,6 @@ public class WorkspcaeMembers {
     @Id
     private  int workspaceId;
 
-    @ManyToOne
-    @JoinColumn(name = "userId",referencedColumnName = "id",insertable = false,updatable = false)
-    private User activeUser;
-
-    @ManyToOne
-    @JoinColumn(name = "workspaceId",referencedColumnName = "id",insertable = false,updatable = false)
-    private Workspace workspace;
-
     public int getUserId() {
         return userId;
     }

@@ -26,5 +26,8 @@
                                  referencedColumnNames="id"/>
 
     </changeSet>
+    <changeSet id="6.1" author="pavankalyan">
+        <renameColumn tableName="Card" oldColumnName="createdUser" newColumnName="created_User"/>
+    </changeSet>
 
 </databaseChangeLog>

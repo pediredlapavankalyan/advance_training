@@ -21,5 +21,7 @@
             <column name="second_name" type="varchar(50)"/>
         </createTable>
     </changeSet>
-
+    <changeSet id="1.1" author="pavankalyan">
+        <
+    </changeSet>
 </databaseChangeLog>

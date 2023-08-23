@@ -18,9 +18,11 @@ public class Workspace {
     @JoinColumn(name ="createdUser",referencedColumnName = "id" ,insertable = false,updatable = false)
     private User creator;
 
-    @OneToMany(mappedBy = "workspace")
-    private Set<User> workspaceMembers = new LinkedHashSet<>();
-
+    @ManyToMany
+    @JoinTable(
+            name = "workspaceMembers",joinColumns = @JoinColumn(name = "workspaceId"),inverseJoinColumns = @JoinColumn(name = "userId")
+    )
+    private Set<User> WorkMembers= new LinkedHashSet<>();
 
 
     public int getId() {

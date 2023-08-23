@@ -16,7 +16,7 @@ public class List {
     private int createdUser;
 
     @ManyToOne
-    @JoinColumn(name = "created_user",referencedColumnName = "id",updatable = false,insertable = false)
+    @JoinColumn(name = "createdUser",referencedColumnName = "id",updatable = false,insertable = false)
     private User listCreator;
 
     @ManyToOne

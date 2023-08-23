@@ -25,5 +25,8 @@
         <addForeignKeyConstraint baseTableName="List" baseColumnNames="createdUser" constraintName="fk_list_user" referencedTableName="User"
                                  referencedColumnNames="id"/>
     </changeSet>
+    <changeSet id="5.1" author="pavankalyan">
+        <renameColumn tableName="List" oldColumnName="createdUser" newColumnName="created_user"/>
+    </changeSet>
 
 </databaseChangeLog>

@@ -17,7 +17,7 @@ public class Card {
     private List list;
 
     @ManyToOne
-    @JoinColumn(name = "createdUser")
+    @JoinColumn(name = "createdUser",insertable = false,updatable = false)
     private User cardCreator;
 
     public int getId() {

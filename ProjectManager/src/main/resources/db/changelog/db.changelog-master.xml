@@ -5,12 +5,11 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
     <!-- Include each individual changelog file -->
-    <include file="classpath:db/changelog/V1__User_Table.xml"/>
-    <include file="classpath:db/changelog/V1__Workspace_Table.xml"/>
-    <include file="classpath:db/changelog/V1__Workspace_Members_Table.xml"/>
-    <include file="classpath:db/changelog/V1__Board_Table.xml"/>
-    <include file="classpath:db/changelog/V1__List_Table.xml"/>
-    <include file="classpath:db/changelog/V1__Card_Table.xml"/>
+    <include file="classpath:/db/changelog/V1__User_Table.xml"/>
+    <include file="classpath:/db/changelog/V1__Workspace_Table.xml"/>
+    <include file="classpath:/db/changelog/V1__Workspace_Members_Table.xml"/>
+    <include file="classpath:/db/changelog/V1__Board_Table.xml"/>
+    <include file="classpath:/db/changelog/V1__List_Table.xml"/>
+    <include file="classpath:/db/changelog/V1__Card_Table.xml"/>
     <!--  Include other files here -->
-
 </databaseChangeLog>

@@ -6,13 +6,13 @@
 
     <changeSet id="2" author="pavankalyan">
         <createTable tableName="Workspace">
-            <column name="id" type="int" autoIncrement="true" startWith="10001" incrementBy="5" >
+            <column name="id" type="int" autoIncrement="true" startWith="20001" incrementBy="5" >
                 <constraints primaryKey="true" />
             </column>
             <column name="name" type="varchar(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="created_user_id" type="int" >
+            <column name="created_user_id" type="int"  >
                 <constraints nullable="false"  />
             </column>
         </createTable>
@@ -35,6 +35,27 @@
             <column name="name" value="projectk"/>
             <where> id=10001</where>
         </update>
+    </changeSet>
+
+    <changeSet id="create-table-test" author="pavankalyan">
+        <createTable tableName="test">
+            <column name="id" type="int" autoIncrement="true" startWith="20001" incrementBy="5" >
+                <constraints primaryKey="true" />
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="test"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="creatre-new-test" author="pavankalyan">
+        <createTable tableName="test1">
+            <column name="id" type="int" autoIncrement="true" startWith="20001" incrementBy="5" >
+                <constraints primaryKey="true" />
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="test1"/>
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>

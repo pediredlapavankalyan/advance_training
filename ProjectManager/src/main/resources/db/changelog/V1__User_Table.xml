@@ -7,35 +7,38 @@
     <changeSet id="1" author="pavankalyan">
         <createTable tableName="User">
             <column name="id" type="int"  autoIncrement="true" startWith="1001" incrementBy="1">
-                <constraints primaryKey="true"/>
+                <constraints  primaryKey="true"/>
             </column>
             <column name="email" type="varchar(50)">
-            <constraints nullable="false"  />
+            <constraints unique="true"  nullable="false"  />
             </column>
             <column name="password" type="varchar(20)">
                 <constraints nullable="false"/>
             </column>
             <column name="first_name" type="varchar(50)">
+                <constraints  nullable="false"/>
+            </column>
+            <column name="second_name"  type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="second_name" type="varchar(50)"/>
         </createTable>
     </changeSet>
 <!-- Adding new column into existing table   -->
     <changeSet id="1.1" author="pavankalyan">
         <addColumn tableName="User">
-            <column name="role" type="varchar(15)" defaultValue="user" />
+            <column name="role" type="varchar(15)"  defaultValue="user" />
         </addColumn>
 
     </changeSet>
 
+    <!--Modifing column datatype-->
     <changeSet id="1.2" author="pavankalyan">
-        <!--Modifing column datatype-->
+
         <modifyDataType tableName="User" columnName="role" newDataType="varchar(20)"/>
         <!--Drop column
         <dropColumn tableName="User" columnName="role"/>-->
     </changeSet>
-    <!--to change column name-->
+    <!--to change column name (RENAME)-->
     <changeSet id="1.3" author="pk">
         <renameColumn tableName="User" oldColumnName="role" newColumnName="Role"/>
     </changeSet>
@@ -47,5 +50,26 @@
             <column name="first_name" value="pavan"/>
             <column name="second_name" value="kalyan" />
         </insert>
+    </changeSet>
+    <!--updating password-->
+    <changeSet id="1.5" author="pk">
+        <update tableName="User">
+            <column name="password" value="asfda"/>
+            <where >id=1001</where>
+        </update>
+    </changeSet>
+    <!---->
+    <changeSet id="1.6" author="pk">
+    <addColumn tableName="User">
+        <column name="mobile" type="int">
+            <constraints unique="true"  nullable="true"/>
+        </column>
+    </addColumn>
+        <rollback  >
+            <!--            <dropColumn tableName="User"  columnName="mobile" />-->
+            <dropTable tableName="User"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="7.0" author="pk">
     </changeSet>
 </databaseChangeLog>

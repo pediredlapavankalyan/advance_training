@@ -1,0 +1,2 @@
+we use UTF-8 encoding in liquibase changelog file it converts the characters in file into asci values
+full form is UNICODE TRANSFORMING FORMAT
